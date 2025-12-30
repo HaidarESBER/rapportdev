@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace B2B Laboratoire - Présentation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0a5cf5;
+            --primary-green: #00d4aa;
+            --secondary-blue: #0066cc;
+            --accent-purple: #764ba2;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a5cf5 0%, #00d4aa 100%);
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .presentation-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+            z-index: 10000;
+            transition: width 0.3s ease;
+            box-shadow: 0 2px 10px rgba(10, 92, 245, 0.5);
+        }
+
+        .header-logo {
+            position: fixed;
+            top: 20px;
+            left: 30px;
+            z-index: 9999;
+            height: 60px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .header-logo img {
+            height: 100%;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 100px 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: white;
+            margin: 20px;
+            border-radius: 25px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+            animation: slideIn 0.6s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .slide:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 10px 35px rgba(10, 92, 245, 0.3); }
+            50% { box-shadow: 0 10px 50px rgba(10, 92, 245, 0.6); }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide h1 {
+            font-size: 4em;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            font-weight: 800;
+            line-height: 1.2;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .slide h2 {
+            font-size: 2.8em;
+            margin-bottom: 50px;
+            color: var(--primary-blue);
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+            border-radius: 3px;
+        }
+
+        .slide h3 {
+            font-size: 2em;
+            margin: 30px 0 20px;
+            color: var(--secondary-blue);
+            font-weight: 600;
+        }
+
+        .slide-content {
+            max-width: 1400px;
+            width: 100%;
+            line-height: 1.8;
+            font-size: 1.25em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin: 40px 0;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(10, 92, 245, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            animation: slideInLeft 0.6s ease;
+        }
+
+        .card:nth-child(even) {
+            animation: slideInRight 0.6s ease;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(10, 92, 245, 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(10, 92, 245, 0.25);
+            border-color: var(--primary-green);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card h4 i {
+            font-size: 1.3em;
+            color: var(--primary-green);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 40px 0;
+            font-size: 1.4em;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(10, 92, 245, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+
+        .highlight strong {
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .cost-comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .cost-chart-wrapper {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(10, 92, 245, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cost-chart-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(10, 92, 245, 0.05) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .cost-comparison-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .cost-card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary-blue);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cost-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-blue), var(--primary-green));
+            transition: width 0.4s ease;
+        }
+
+        .cost-card:hover {
+            transform: translateX(10px) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(10, 92, 245, 0.2);
+        }
+
+        .cost-card:hover::before {
+            width: 100%;
+            opacity: 0.05;
+        }
+
+        .cost-card.best {
+            border-left-color: var(--primary-green);
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+            box-shadow: 0 10px 40px rgba(0, 212, 170, 0.2);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .cost-card.best::before {
+            background: linear-gradient(180deg, var(--primary-green), #00b894);
+        }
+
+        .cost-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .cost-card-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cost-card-title i {
+            font-size: 1.2em;
+            color: var(--primary-blue);
+        }
+
+        .cost-card.best .cost-card-title i {
+            color: var(--primary-green);
+        }
+
+        .cost-badge {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(10, 92, 245, 0.3);
+        }
+
+        .cost-card.best .cost-badge {
+            background: linear-gradient(135deg, var(--primary-green), #00b894);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .cost-card-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .cost-detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cost-detail-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .cost-detail-value {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .cost-savings {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 212, 170, 0.1);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .cost-savings-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .cost-savings-value {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .recommended-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, var(--primary-green), #00b894);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4);
+            transform: rotate(12deg);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+            font-size: 1.05em;
+            transition: transform 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: translateX(5px);
+        }
+
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.5em;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 212, 170, 0.1);
+            border-radius: 50%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 40px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: left;
+            font-size: 1.15em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #e8f4f8;
+            font-size: 1.05em;
+        }
+
+        tr:hover {
+            background: #f0f7ff;
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .risk-high {
+            color: #e74c3c;
+            font-weight: 700;
+            background: rgba(231, 76, 60, 0.1);
+            padding: 5px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .risk-medium {
+            color: #f39c12;
+            font-weight: 700;
+            background: rgba(243, 156, 18, 0.1);
+            padding: 5px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .risk-low {
+            color: #27ae60;
+            font-weight: 700;
+            background: rgba(39, 174, 96, 0.1);
+            padding: 5px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .architecture-diagram {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            padding: 60px;
+            border-radius: 25px;
+            margin: 50px 0;
+            position: relative;
+            overflow: visible;
+            box-shadow: 0 20px 60px rgba(10, 92, 245, 0.15);
+        }
+
+        .arch-layers {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .arch-layer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            border: 2px dashed rgba(10, 92, 245, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .arch-layer:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--primary-green);
+            transform: translateX(5px);
+        }
+
+        .arch-layer-label {
+            position: absolute;
+            left: -120px;
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .arch-box {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(10, 92, 245, 0.3);
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            min-width: 200px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .arch-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .arch-box:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 20px 50px rgba(10, 92, 245, 0.5);
+        }
+
+        .arch-box:hover::before {
+            left: 100%;
+        }
+
+        .arch-box i {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .arch-box .tech-name {
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .arch-box .tech-desc {
+            font-size: 0.85em;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .arch-connector-svg {
+            pointer-events: none;
+        }
+
+        .arch-alternative {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+            border-radius: 20px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .arch-alternative h4 {
+            color: #f39c12;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(10, 92, 245, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(10, 92, 245, 0.5);
+        }
+
+        .nav-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .nav-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1em;
+            box-shadow: 0 5px 15px rgba(10, 92, 245, 0.3);
+        }
+
+        .title-slide {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .title-slide h1 {
+            color: white;
+            -webkit-text-fill-color: white;
+            font-size: 4.5em;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .title-slide .subtitle {
+            font-size: 2em;
+            margin-top: 40px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            font-weight: 400;
+        }
+
+        .title-slide .logo-large {
+            height: 120px;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.3));
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 1s ease;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .icon-item {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .icon-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-green);
+            box-shadow: 0 10px 30px rgba(10, 92, 245, 0.15);
+        }
+
+        .icon-item i {
+            font-size: 3em;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .icon-item span {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(10, 92, 245, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .stat-card .number {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 60px 30px 60px;
+            }
+            .slide h1 {
+                font-size: 2.5em;
+            }
+            .slide h2 {
+                font-size: 2em;
+            }
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .header-logo {
+                height: 40px;
+                top: 15px;
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="header-logo">
+        <img src="https://laboccaz.com/wp-content/uploads/2024/12/logo-bleu-vert.webp" alt="LabOccaz Logo">
+    </div>
+
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide" id="slide1">
+            <div class="slide-number">1 / 12</div>
+            <img src="https://laboccaz.com/wp-content/uploads/2024/12/logo-bleu-vert.webp" alt="LabOccaz" class="logo-large">
+            <h1>Marketplace B2B Laboratoire</h1>
+            <div class="subtitle">Analyse comparative des options de développement</div>
+            <div style="margin-top: 60px; font-size: 1.4em; opacity: 0.95; position: relative; z-index: 1;">
+                <i class="fas fa-recycle"></i> Économie circulaire • 
+                <i class="fas fa-shield-alt"></i> RGPD • 
+                <i class="fas fa-rocket"></i> Performance • 
+                <i class="fas fa-euro-sign"></i> Coût
+            </div>
+        </div>
+
+        <!-- Slide 2: Contexte -->
+        <div class="slide" id="slide2">
+            <div class="slide-number">2 / 12</div>
+            <h2><i class="fas fa-lightbulb"></i> Contexte & Vision</h2>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <h4><i class="fas fa-bullseye"></i> Objectif</h4>
+                        <p style="margin-bottom: 20px; font-weight: 600;">Développer une marketplace B2B spécialisée pour le secteur laboratoire, mettant en relation :</p>
+                        <ul>
+                            <li>Professionnels cherchant du matériel d'occasion</li>
+                            <li>Laboratoires revendeurs</li>
+                            <li>Réparateurs spécialisés</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-leaf"></i> Valeurs</h4>
+                        <ul>
+                            <li>Économie circulaire</li>
+                            <li>Économie sociale et solidaire (ESS)</li>
+                            <li>Mesure d'impact environnemental</li>
+                            <li>Conformité RGPD stricte</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="highlight">
+                    <strong><i class="fas fa-chart-line"></i> Objectif du rapport</strong>
+                    Identifier la solution optimale en termes de coût, qualité et pérennité
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Périmètre fonctionnel -->
+        <div class="slide" id="slide3">
+            <div class="slide-number">3 / 12</div>
+            <h2><i class="fas fa-list-check"></i> Périmètre fonctionnel</h2>
+            <div class="slide-content">
+                <div class="grid-3">
+                    <div class="card">
+                        <h4><i class="fas fa-shopping-cart"></i> Navigation & Transactions</h4>
+                        <ul>
+                            <li>Catégories & filtres avancés</li>
+                            <li>Recherche avec autocomplétion</li>
+                            <li>Panier B2B mono-entreprise</li>
+                            <li>Paiement Stripe sécurisé</li>
+                            <li>SEO optimisé</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-users"></i> Comptes & Sécurité</h4>
+                        <ul>
+                            <li>Profils entreprise/laboratoire</li>
+                            <li>Authentification robuste</li>
+                            <li>Permissions granulaires</li>
+                            <li>Consentements RGPD</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-chart-bar"></i> Back-office & Intégrations</h4>
+                        <ul>
+                            <li>Facturation PDF automatique</li>
+                            <li>Export comptable</li>
+                            <li>Dashboards financiers/écologiques</li>
+                            <li>API transporteur</li>
+                            <li>Chatbot optionnel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Architecture technique -->
+        <div class="slide" id="slide4">
+            <div class="slide-number">4 / 12</div>
+            <h2><i class="fas fa-sitemap"></i> Architecture technique</h2>
+            <div class="slide-content">
+                <div class="architecture-diagram">
+                    <div class="arch-layers">
+                        <!-- Layer 1: Frontend -->
+                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(10, 92, 245, 0.08) 0%, rgba(0, 212, 170, 0.08) 100%);">
+                            <div class="arch-layer-label">Frontend</div>
+                            <div class="arch-box" style="animation: float 4s ease-in-out infinite;">
+                                <i class="fab fa-react"></i>
+                                <span class="tech-name">Next.js</span>
+                                <span class="tech-desc">React Server Components</span>
+                            </div>
+                        </div>
+                        
+                        <svg style="position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 50px; z-index: 1; top: 180px;" class="arch-connector-svg">
+                            <defs>
+                                <linearGradient id="connectorGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#0a5cf5;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <line x1="2" y1="0" x2="2" y2="50" stroke="url(#connectorGradient)" stroke-width="4" stroke-linecap="round">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                            </line>
+                            <polygon points="0,45 4,50 8,45" fill="#00d4aa">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                            </polygon>
+                        </svg>
+                        
+                        <!-- Layer 2: Backend -->
+                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(0, 212, 170, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%); margin-top: 50px;">
+                            <div class="arch-layer-label">Backend</div>
+                            <div class="arch-box" style="animation: float 4s ease-in-out infinite; animation-delay: 0.5s;">
+                                <i class="fab fa-laravel"></i>
+                                <span class="tech-name">Laravel</span>
+                                <span class="tech-desc">API Métier</span>
+                            </div>
+                            <div class="arch-box" style="background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); animation: float 4s ease-in-out infinite; animation-delay: 1s;">
+                                <i class="fab fa-node-js"></i>
+                                <span class="tech-name">NestJS</span>
+                                <span class="tech-desc">Temps réel</span>
+                            </div>
+                        </div>
+                        
+                        <svg style="position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 50px; z-index: 1; top: 380px;" class="arch-connector-svg">
+                            <line x1="2" y1="0" x2="2" y2="50" stroke="url(#connectorGradient)" stroke-width="4" stroke-linecap="round">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                            </line>
+                            <polygon points="0,45 4,50 8,45" fill="#00d4aa">
+                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                            </polygon>
+                        </svg>
+                        
+                        <!-- Layer 3: Database & Services -->
+                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(118, 75, 162, 0.08) 0%, rgba(10, 92, 245, 0.08) 100%); margin-top: 50px;">
+                            <div class="arch-layer-label">Data & Services</div>
+                            <div class="arch-box" style="background: linear-gradient(135deg, #0066cc 0%, #0a5cf5 100%); animation: float 4s ease-in-out infinite; animation-delay: 1.5s;">
+                                <i class="fas fa-database"></i>
+                                <span class="tech-name">PostgreSQL</span>
+                                <span class="tech-desc">Neon Cloud</span>
+                            </div>
+                            <div class="arch-box" style="background: linear-gradient(135deg, #635bff 0%, #0a2540 100%); animation: float 4s ease-in-out infinite; animation-delay: 2s;">
+                                <i class="fab fa-stripe"></i>
+                                <span class="tech-name">Stripe</span>
+                                <span class="tech-desc">PCI-DSS</span>
+                            </div>
+                            <div class="arch-box" style="background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%); animation: float 4s ease-in-out infinite; animation-delay: 2.5s;">
+                                <i class="fab fa-aws"></i>
+                                <span class="tech-name">AWS</span>
+                                <span class="tech-desc">Infrastructure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-2" style="margin-top: 50px;">
+                    <div class="card">
+                        <h4><i class="fas fa-check-circle"></i> Architecture optimisée</h4>
+                        <ul>
+                            <li><strong>Frontend :</strong> Next.js (Server Components) - Performance optimale</li>
+                            <li><strong>Backend métier :</strong> Laravel - Robustesse & sécurité</li>
+                            <li><strong>Backend temps réel :</strong> NestJS - WebSockets & intégrations</li>
+                            <li><strong>Base de données :</strong> PostgreSQL (Neon) - Scalabilité</li>
+                            <li><strong>Infrastructure :</strong> AWS optimisée - Éco-responsable</li>
+                        </ul>
+                    </div>
+                    <div class="card arch-alternative">
+                        <h4><i class="fas fa-bolt"></i> Alternative simple</h4>
+                        <ul>
+                            <li><strong>Frontend :</strong> Next.js</li>
+                            <li><strong>Backend :</strong> Node.js pur (Express/Fastify)</li>
+                            <li><strong>Base de données :</strong> PostgreSQL</li>
+                            <li><strong>Avantage :</strong> Moins d'expertise requise</li>
+                            <li><strong>Inconvénient :</strong> Moins optimisée (sécurité/maintenabilité)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Estimation des charges -->
+        <div class="slide" id="slide5">
+            <div class="slide-number">5 / 12</div>
+            <h2><i class="fas fa-clock"></i> Estimation des charges</h2>
+            <div class="slide-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number">1 800-2 000</div>
+                        <div class="label">Heures totales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">60%</div>
+                        <div class="label">Juniors</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">40%</div>
+                        <div class="label">Seniors</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="hoursChart"></canvas>
+                </div>
+                <div class="grid-2" style="margin-top: 40px;">
+                    <div class="card">
+                        <h4><i class="fas fa-tasks"></i> Fonctionnalités principales</h4>
+                        <ul>
+                            <li>Homepage & navigation : 180h</li>
+                            <li>Authentification & panier : 160h</li>
+                            <li>Paiement Stripe : 100h</li>
+                            <li>Dashboards & analytics : 180h</li>
+                            <li>Facturation PDF : 120h</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-plug"></i> Intégrations & déploiement</h4>
+                        <ul>
+                            <li>API transporteur : 80h</li>
+                            <li>Déploiement AWS & CI/CD : 100h</li>
+                            <li>SEO & optimisation : 80h</li>
+                            <li>Modules écologiques : 60h</li>
+                            <li>Chatbot (optionnel) : 40h</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Scénarios de réalisation -->
+        <div class="slide" id="slide6">
+            <div class="slide-number">6 / 12</div>
+            <h2><i class="fas fa-route"></i> Scénarios de réalisation</h2>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <h4><i class="fas fa-flag"></i> Agence française</h4>
+                        <p><strong>Coût :</strong> 160 000 - 300 000 € HT</p>
+                        <p><strong>Durée :</strong> 9-12 mois</p>
+                        <p><strong>Maintenance :</strong> 15-20% du coût initial/an</p>
+                        <ul>
+                            <li>✅ Sécurité contractuelle</li>
+                            <li>✅ Qualité standardisée</li>
+                            <li>❌ Coût élevé</li>
+                            <li>❌ Flexibilité limitée</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-users-cog"></i> Équipe interne France</h4>
+                        <p><strong>Coût :</strong> 220 000 - 290 000 €/an</p>
+                        <p><strong>Durée :</strong> 9-12 mois</p>
+                        <p><strong>Composition :</strong> 2 seniors + 1 junior + 1 CP</p>
+                        <ul>
+                            <li>✅ Contrôle total</li>
+                            <li>✅ Capitalisation interne</li>
+                            <li>❌ Coût très élevé</li>
+                            <li>❌ Charge RH importante</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="border: 3px solid var(--primary-green);">
+                        <h4><i class="fas fa-star"></i> Agence Liban supervisée ⭐</h4>
+                        <p><strong>Coût :</strong> 75 000 - 85 000 €</p>
+                        <p><strong>Configuration A :</strong> 2 seniors + 4 juniors</p>
+                        <p><strong>Configuration B :</strong> 1 senior + 5 juniors</p>
+                        <ul>
+                            <li>✅ Coût réduit significativement</li>
+                            <li>✅ Qualité maintenue (supervision)</li>
+                            <li>✅ Flexibilité</li>
+                            <li>⚠️ Gouvernance nécessaire</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-globe"></i> Freelances internationaux</h4>
+                        <p><strong>Coût :</strong> 100 000 €+</p>
+                        <ul>
+                            <li>✅ Flexibilité</li>
+                            <li>❌ Coordination complexe</li>
+                            <li>❌ Dépendance individuelle</li>
+                            <li>❌ Risque de qualité variable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Comparaison des coûts -->
+        <div class="slide" id="slide7">
+            <div class="slide-number">7 / 12</div>
+            <h2><i class="fas fa-euro-sign"></i> Comparaison des coûts par option</h2>
+            <div class="slide-content">
+                <div class="cost-comparison-container">
+                    <!-- Graphique Chart.js -->
+                    <div class="cost-chart-wrapper">
+                        <canvas id="costComparisonChart"></canvas>
+                    </div>
+
+                    <!-- Cartes détaillées -->
+                    <div class="cost-comparison-cards">
+                        <div class="cost-card" style="animation: fadeInUp 0.6s ease;">
+                            <div class="cost-card-header">
+                                <div class="cost-card-title">
+                                    <i class="fas fa-flag"></i> Agence France
+                                </div>
+                                <div class="cost-badge">300k€</div>
+                            </div>
+                            <div class="cost-card-details">
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Coût min</span>
+                                    <span class="cost-detail-value">160k€</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Coût max</span>
+                                    <span class="cost-detail-value">300k€</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Durée</span>
+                                    <span class="cost-detail-value">9-12 mois</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Maintenance</span>
+                                    <span class="cost-detail-value">15-20%/an</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-card" style="animation: fadeInUp 0.7s ease;">
+                            <div class="cost-card-header">
+                                <div class="cost-card-title">
+                                    <i class="fas fa-users-cog"></i> Équipe interne
+                                </div>
+                                <div class="cost-badge">290k€</div>
+                            </div>
+                            <div class="cost-card-details">
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Coût min</span>
+                                    <span class="cost-detail-value">220k€</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Coût max</span>
+                                    <span class="cost-detail-value">290k€</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Durée</span>
+                                    <span class="cost-detail-value">9-12 mois</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Équipe</span>
+                                    <span class="cost-detail-value">2S + 1J + CP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-card best" style="animation: fadeInUp 0.8s ease;">
+                            <div class="cost-card-header">
+                                <div class="cost-card-title">
+                                    <i class="fas fa-star"></i> Agence Liban
+                                </div>
+                                <div class="cost-badge">85k€</div>
+                            </div>
+                            <div class="cost-card-details">
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Coût min</span>
+                                    <span class="cost-detail-value">75k€</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Coût max</span>
+                                    <span class="cost-detail-value">85k€</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Durée</span>
+                                    <span class="cost-detail-value">9-12 mois</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Équipe</span>
+                                    <span class="cost-detail-value">2S + 4J</span>
+                                </div>
+                            </div>
+                            <div class="cost-savings">
+                                <div class="cost-savings-label">Économie vs France</div>
+                                <div class="cost-savings-value">-215k€ (71%)</div>
+                            </div>
+                        </div>
+
+                        <div class="cost-card" style="animation: fadeInUp 0.9s ease;">
+                            <div class="cost-card-header">
+                                <div class="cost-card-title">
+                                    <i class="fas fa-globe"></i> Freelances
+                                </div>
+                                <div class="cost-badge">100k€+</div>
+                            </div>
+                            <div class="cost-card-details">
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Coût min</span>
+                                    <span class="cost-detail-value">100k€</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Flexibilité</span>
+                                    <span class="cost-detail-value">Élevée</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Coordination</span>
+                                    <span class="cost-detail-value">Complexe</span>
+                                </div>
+                                <div class="cost-detail-item">
+                                    <span class="cost-detail-label">Risque</span>
+                                    <span class="cost-detail-value">Moyen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: RGPD & Sécurité -->
+        <div class="slide" id="slide8">
+            <div class="slide-number">8 / 12</div>
+            <h2><i class="fas fa-shield-alt"></i> RGPD & Sécurité</h2>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <h4><i class="fas fa-lock"></i> Mesures techniques</h4>
+                        <ul>
+                            <li>Chiffrement des données sensibles</li>
+                            <li>Journalisation complète</li>
+                            <li>Accès restreint (IAM)</li>
+                            <li>Revues de code sécurité</li>
+                            <li>Tests de pénétration</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-clipboard-list"></i> Mesures organisationnelles</h4>
+                        <ul>
+                            <li>DPO désigné</li>
+                            <li>Registre des traitements</li>
+                            <li>Clauses sous-traitants conformes</li>
+                            <li>Sensibilisation équipes</li>
+                            <li>Procédures de notification</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="icon-grid" style="margin-top: 40px;">
+                    <div class="icon-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Clients & profils</span>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Paiements (PCI-DSS)</span>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Navigation & analytics</span>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Facturation</span>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Données écologiques</span>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-check-square"></i>
+                        <span>Consentements RGPD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Développement durable -->
+        <div class="slide" id="slide9">
+            <div class="slide-number">9 / 12</div>
+            <h2><i class="fas fa-leaf"></i> Développement durable & ESS</h2>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <h4><i class="fas fa-bolt"></i> Architecture sobre</h4>
+                        <ul>
+                            <li>Code optimisé pour faible consommation</li>
+                            <li>Infrastructure AWS éco-responsable</li>
+                            <li>Caching intelligent</li>
+                            <li>SSR ciblé (Next.js)</li>
+                            <li>Base de données efficiente</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-chart-bar"></i> Suivi & reporting</h4>
+                        <ul>
+                            <li>Indicateurs carbone par transaction</li>
+                            <li>Mesure impact logistique</li>
+                            <li>Benchmarks vs marché</li>
+                            <li>Reporting régulier</li>
+                            <li>Pilotage stratégique ESS</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="highlight">
+                    <strong><i class="fas fa-globe"></i> Contribution</strong>
+                    Économie circulaire • Réduction déchets • Réemploi matériel • Impact social mesurable
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Analyse des risques -->
+        <div class="slide" id="slide10">
+            <div class="slide-number">10 / 12</div>
+            <h2><i class="fas fa-exclamation-triangle"></i> Analyse des risques</h2>
+            <div class="slide-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-exclamation-circle"></i> Risque</th>
+                            <th><i class="fas fa-percentage"></i> Probabilité</th>
+                            <th><i class="fas fa-bolt"></i> Impact</th>
+                            <th><i class="fas fa-shield-alt"></i> Mitigation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Non-conformité RGPD</strong></td>
+                            <td><span class="risk-medium">Moyen</span></td>
+                            <td><span class="risk-high">Élevé</span></td>
+                            <td>Audit, DPO, contrats, formation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fuite de données</strong></td>
+                            <td><span class="risk-low">Faible</span></td>
+                            <td><span class="risk-high">Élevé</span></td>
+                            <td>Chiffrement, IAM, monitoring</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Déviation fonctionnelle</strong></td>
+                            <td><span class="risk-medium">Moyen</span></td>
+                            <td><span class="risk-medium">Moyen</span></td>
+                            <td>Supervision interne, specs vivantes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dépassement budget</strong></td>
+                            <td><span class="risk-low">Faible</span></td>
+                            <td><span class="risk-high">Élevé</span></td>
+                            <td>Suivi mensuel, ajustement équipe</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Retard projet</strong></td>
+                            <td><span class="risk-medium">Moyen</span></td>
+                            <td><span class="risk-high">Élevé</span></td>
+                            <td>Sprints courts, revues régulières</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impact écologique non conforme</strong></td>
+                            <td><span class="risk-medium">Moyen</span></td>
+                            <td><span class="risk-medium">Moyen</span></td>
+                            <td>Reporting carbone, optimisation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 11: Recommandation -->
+        <div class="slide" id="slide11">
+            <div class="slide-number">11 / 12</div>
+            <h2><i class="fas fa-star"></i> Recommandation finale</h2>
+            <div class="slide-content">
+                <div class="highlight" style="font-size: 1.6em; padding: 60px; position: relative;">
+                    <strong style="font-size: 1.3em;"><i class="fas fa-star"></i> Option prioritaire</strong><br/><br/>
+                    <div style="font-size: 1.2em; margin-top: 20px;">
+                        Agence Liban qualifiée + Supervision interne
+                    </div>
+                </div>
+                <div class="grid-3" style="margin-top: 50px;">
+                    <div class="card">
+                        <h4><i class="fas fa-euro-sign"></i> Avantages coûts</h4>
+                        <ul>
+                            <li>75 000 - 85 000 €</li>
+                            <li>Économie de 71% vs France</li>
+                            <li>ROI optimisé</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-check-circle"></i> Qualité garantie</h4>
+                        <ul>
+                            <li>Supervision interne continue</li>
+                            <li>Conformité RGPD assurée</li>
+                            <li>Modules écologiques intégrés</li>
+                            <li>Standards techniques respectés</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-bullseye"></i> Conditions de succès</h4>
+                        <ul>
+                            <li>Gouvernance formalisée</li>
+                            <li>Contrats clairs</li>
+                            <li>Rituels de contrôle qualité</li>
+                            <li>Communication régulière</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Conclusion -->
+        <div class="slide title-slide" id="slide12">
+            <div class="slide-number">12 / 12</div>
+            <img src="https://laboccaz.com/wp-content/uploads/2024/12/logo-bleu-vert.webp" alt="LabOccaz" class="logo-large">
+            <h1>Merci pour votre attention</h1>
+            <div class="subtitle" style="margin-top: 60px;">
+                <div style="font-size: 1.6em; margin-bottom: 40px; position: relative; z-index: 1;">
+                    <i class="fas fa-recycle"></i> Marketplace B2B Laboratoire<br/>
+                    <div style="margin-top: 20px; font-size: 0.9em;">
+                        <i class="fas fa-leaf"></i> Économie circulaire • 
+                        <i class="fas fa-rocket"></i> Performance • 
+                        <i class="fas fa-shield-alt"></i> Sécurité
+                    </div>
+                </div>
+                <div style="font-size: 1.4em; opacity: 0.9; position: relative; z-index: 1;">
+                    <i class="fas fa-comments"></i> Questions & Discussion
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()"><span>← Précédent</span></button>
+        <button class="nav-btn" onclick="nextSlide()"><span>Suivant →</span></button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 12;
+
+        function updateProgress() {
+            const progress = (currentSlide / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            
+            slides.forEach((slide, index) => {
+                if (index + 1 === currentSlide) {
+                    slide.style.display = 'flex';
+                    slide.style.animation = 'slideIn 0.6s ease';
+                } else {
+                    slide.style.display = 'none';
+                }
+            });
+            
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            }
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                previousSlide();
+            }
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) previousSlide();
+        }
+
+        // Initialize
+        showSlide(1);
+
+        // Chart for hours distribution
+        const ctx = document.getElementById('hoursChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Homepage & filtres', 'Auth & panier', 'Stripe', 'Dashboards', 'Profils', 'Transporteur', 'Facturation', 'Multi-entreprises', 'Recherche', 'Chatbot', 'AWS/CI-CD', 'SEO', 'Écologie'],
+                    datasets: [{
+                        data: [180, 160, 100, 180, 120, 80, 120, 60, 60, 40, 100, 80, 60],
+                        backgroundColor: [
+                            '#0a5cf5', '#00d4aa', '#764ba2', '#0066cc', '#00b894',
+                            '#43e97b', '#fa709a', '#fee140', '#30cfd0', '#a8edea',
+                            '#fed6e3', '#d299c2', '#fef9d7'
+                        ],
+                        borderWidth: 3,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                font: { size: 12, family: 'Poppins' },
+                                padding: 15,
+                                usePointStyle: true
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Répartition des charges (heures)',
+                            font: { size: 20, weight: 'bold', family: 'Poppins' },
+                            color: '#0a5cf5',
+                            padding: 20
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(10, 92, 245, 0.9)',
+                            titleFont: { size: 14, weight: 'bold', family: 'Poppins' },
+                            bodyFont: { size: 13, family: 'Poppins' },
+                            padding: 12,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.parsed + 'h';
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        animateRotate: true,
+                        animateScale: true,
+                        duration: 1500
+                    }
+                }
+            });
+        }
+
+        // Chart for cost comparison
+        const costCtx = document.getElementById('costComparisonChart');
+        if (costCtx) {
+            new Chart(costCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Agence France', 'Équipe interne', 'Agence Liban ⭐', 'Freelances'],
+                    datasets: [{
+                        label: 'Coût maximum (k€)',
+                        data: [300, 290, 85, 100],
+                        backgroundColor: [
+                            'rgba(10, 92, 245, 0.8)',
+                            'rgba(10, 92, 245, 0.8)',
+                            'rgba(0, 212, 170, 0.9)',
+                            'rgba(118, 75, 162, 0.8)'
+                        ],
+                        borderColor: [
+                            '#0a5cf5',
+                            '#0a5cf5',
+                            '#00d4aa',
+                            '#764ba2'
+                        ],
+                        borderWidth: 3,
+                        borderRadius: 12,
+                        borderSkipped: false,
+                    }, {
+                        label: 'Coût minimum (k€)',
+                        data: [160, 220, 75, 100],
+                        backgroundColor: [
+                            'rgba(10, 92, 245, 0.4)',
+                            'rgba(10, 92, 245, 0.4)',
+                            'rgba(0, 212, 170, 0.5)',
+                            'rgba(118, 75, 162, 0.4)'
+                        ],
+                        borderColor: [
+                            '#0a5cf5',
+                            '#0a5cf5',
+                            '#00d4aa',
+                            '#764ba2'
+                        ],
+                        borderWidth: 2,
+                        borderRadius: 12,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                font: { size: 13, family: 'Poppins', weight: '600' },
+                                padding: 15,
+                                usePointStyle: true,
+                                color: '#333'
+                            }
+                        },
+                        title: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(10, 92, 245, 0.95)',
+                            titleFont: { size: 14, weight: 'bold', family: 'Poppins' },
+                            bodyFont: { size: 13, family: 'Poppins' },
+                            padding: 15,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.parsed.x + 'k€';
+                                    return label;
+                                }
+                            }
+                        },
+                        annotation: {
+                            annotations: {
+                                highlight: {
+                                    type: 'box',
+                                    yMin: 2,
+                                    yMax: 3,
+                                    backgroundColor: 'rgba(0, 212, 170, 0.1)',
+                                    borderColor: 'rgba(0, 212, 170, 0.5)',
+                                    borderWidth: 2
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(10, 92, 245, 0.1)',
+                                lineWidth: 1
+                            },
+                            ticks: {
+                                font: { size: 12, family: 'Poppins' },
+                                color: '#666',
+                                callback: function(value) {
+                                    return value + 'k€';
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Coût (k€)',
+                                font: { size: 14, weight: 'bold', family: 'Poppins' },
+                                color: '#0a5cf5'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                font: { size: 13, family: 'Poppins', weight: '600' },
+                                color: '#333'
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeInOutQuart'
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
