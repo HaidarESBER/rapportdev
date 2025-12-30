@@ -16,17 +16,19 @@
         }
 
         :root {
-            --primary-blue: #0a5cf5;
-            --primary-green: #00d4aa;
-            --secondary-blue: #0066cc;
-            --accent-purple: #764ba2;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
+            --primary-blue: #0066ff;
+            --primary-green: #00c9a7;
+            --secondary-blue: #0052cc;
+            --accent-purple: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gradient-start: #0066ff;
+            --gradient-end: #00c9a7;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a5cf5 0%, #00d4aa 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             color: #333;
             overflow-x: hidden;
             scroll-behavior: smooth;
@@ -44,10 +46,10 @@
             top: 0;
             left: 0;
             height: 5px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green), #00a8cc);
             z-index: 10000;
             transition: width 0.3s ease;
-            box-shadow: 0 2px 10px rgba(10, 92, 245, 0.5);
+            box-shadow: 0 2px 15px rgba(0, 102, 255, 0.6);
         }
 
         .header-logo {
@@ -117,8 +119,8 @@
         }
 
         @keyframes glow {
-            0%, 100% { box-shadow: 0 10px 35px rgba(10, 92, 245, 0.3); }
-            50% { box-shadow: 0 10px 50px rgba(10, 92, 245, 0.6); }
+            0%, 100% { box-shadow: 0 10px 35px rgba(0, 102, 255, 0.4); }
+            50% { box-shadow: 0 10px 50px rgba(0, 102, 255, 0.7); }
         }
 
         @keyframes slideInLeft {
@@ -146,7 +148,7 @@
         .slide h1 {
             font-size: 4em;
             margin-bottom: 30px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -174,7 +176,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 5px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+            background: linear-gradient(90deg, #0066ff, #00c9a7, #00a8cc);
             border-radius: 3px;
         }
 
@@ -236,7 +238,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+            background: linear-gradient(90deg, #0066ff, #00c9a7);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -284,14 +286,14 @@
         }
 
         .highlight {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             color: white;
             padding: 50px;
             border-radius: 20px;
             margin: 40px 0;
             font-size: 1.4em;
             text-align: center;
-            box-shadow: 0 15px 50px rgba(10, 92, 245, 0.3);
+            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.4);
             position: relative;
             overflow: hidden;
             animation: glow 3s ease-in-out infinite;
@@ -428,17 +430,17 @@
         }
 
         .cost-badge {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            background: linear-gradient(135deg, #0066ff, #00c9a7);
             color: white;
             padding: 8px 18px;
             border-radius: 20px;
             font-weight: 700;
             font-size: 1.1em;
-            box-shadow: 0 4px 15px rgba(10, 92, 245, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
         }
 
         .cost-card.best .cost-badge {
-            background: linear-gradient(135deg, var(--primary-green), #00b894);
+            background: linear-gradient(135deg, #00c9a7, #00a8cc);
             animation: pulse 2s ease-in-out infinite;
         }
 
@@ -491,13 +493,13 @@
             position: absolute;
             top: -10px;
             right: -10px;
-            background: linear-gradient(135deg, var(--primary-green), #00b894);
+            background: linear-gradient(135deg, #00c9a7, #00a8cc);
             color: white;
             padding: 8px 20px;
             border-radius: 20px;
             font-weight: 700;
             font-size: 0.9em;
-            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 201, 167, 0.5);
             transform: rotate(12deg);
             animation: pulse 2s ease-in-out infinite;
         }
@@ -558,7 +560,7 @@
         }
 
         th {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             color: white;
             padding: 25px 20px;
             text-align: left;
@@ -661,11 +663,11 @@
         }
 
         .arch-box {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             color: white;
             padding: 30px 40px;
             border-radius: 18px;
-            box-shadow: 0 10px 35px rgba(10, 92, 245, 0.3);
+            box-shadow: 0 10px 35px rgba(0, 102, 255, 0.4);
             font-weight: 700;
             font-size: 1.1em;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -673,7 +675,37 @@
             overflow: hidden;
             min-width: 200px;
             text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .arch-box-link {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+        }
+
+        .arch-box-link:hover .arch-box {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 25px 60px rgba(10, 92, 245, 0.5);
             cursor: pointer;
+        }
+
+        .arch-box-link .arch-box::after {
+            content: '📖';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 8px;
+            border-radius: 8px;
+        }
+
+        .arch-box-link:hover .arch-box::after {
+            opacity: 1;
         }
 
         .arch-box::before {
@@ -743,7 +775,7 @@
         }
 
         .nav-btn {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             color: white;
             border: none;
             padding: 18px 35px;
@@ -751,7 +783,7 @@
             cursor: pointer;
             font-size: 1.1em;
             font-weight: 600;
-            box-shadow: 0 8px 25px rgba(10, 92, 245, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.5);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
@@ -789,17 +821,17 @@
             position: absolute;
             top: 25px;
             right: 30px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             color: white;
             padding: 12px 25px;
             border-radius: 25px;
             font-weight: 700;
             font-size: 1em;
-            box-shadow: 0 5px 15px rgba(10, 92, 245, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
         }
 
         .title-slide {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             color: white;
             position: relative;
             overflow: hidden;
@@ -894,12 +926,12 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 50%, #00a8cc 100%);
             color: white;
             padding: 40px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(10, 92, 245, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
             transition: all 0.3s ease;
         }
 
@@ -1039,20 +1071,22 @@
                 <div class="architecture-diagram">
                     <div class="arch-layers">
                         <!-- Layer 1: Frontend -->
-                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(10, 92, 245, 0.08) 0%, rgba(0, 212, 170, 0.08) 100%);">
+                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 201, 167, 0.08) 100%);">
                             <div class="arch-layer-label">Frontend</div>
-                            <div class="arch-box" style="animation: float 4s ease-in-out infinite;">
-                                <i class="fab fa-react"></i>
-                                <span class="tech-name">Next.js</span>
-                                <span class="tech-desc">React Server Components</span>
-                            </div>
+                            <a href="https://nextjs.org/docs" target="_blank" rel="noopener noreferrer" class="arch-box-link">
+                                <div class="arch-box" style="animation: float 4s ease-in-out infinite;">
+                                    <i class="fab fa-react"></i>
+                                    <span class="tech-name">Next.js</span>
+                                    <span class="tech-desc">React Server Components</span>
+                                </div>
+                            </a>
                         </div>
                         
                         <svg style="position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 50px; z-index: 1; top: 180px;" class="arch-connector-svg">
                             <defs>
                                 <linearGradient id="connectorGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#0a5cf5;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+                                    <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00c9a7;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
                             <line x1="2" y1="0" x2="2" y2="50" stroke="url(#connectorGradient)" stroke-width="4" stroke-linecap="round">
@@ -1064,18 +1098,22 @@
                         </svg>
                         
                         <!-- Layer 2: Backend -->
-                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(0, 212, 170, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%); margin-top: 50px;">
+                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(0, 201, 167, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%); margin-top: 50px;">
                             <div class="arch-layer-label">Backend</div>
-                            <div class="arch-box" style="animation: float 4s ease-in-out infinite; animation-delay: 0.5s;">
-                                <i class="fab fa-laravel"></i>
-                                <span class="tech-name">Laravel</span>
-                                <span class="tech-desc">API Métier</span>
-                            </div>
-                            <div class="arch-box" style="background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); animation: float 4s ease-in-out infinite; animation-delay: 1s;">
-                                <i class="fab fa-node-js"></i>
-                                <span class="tech-name">NestJS</span>
-                                <span class="tech-desc">Temps réel</span>
-                            </div>
+                            <a href="https://laravel.com/docs" target="_blank" rel="noopener noreferrer" class="arch-box-link">
+                                <div class="arch-box" style="animation: float 4s ease-in-out infinite; animation-delay: 0.5s;">
+                                    <i class="fab fa-laravel"></i>
+                                    <span class="tech-name">Laravel</span>
+                                    <span class="tech-desc">API Métier</span>
+                                </div>
+                            </a>
+                            <a href="https://docs.nestjs.com" target="_blank" rel="noopener noreferrer" class="arch-box-link">
+                                <div class="arch-box" style="background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); animation: float 4s ease-in-out infinite; animation-delay: 1s;">
+                                    <i class="fab fa-node-js"></i>
+                                    <span class="tech-name">NestJS</span>
+                                    <span class="tech-desc">Temps réel</span>
+                                </div>
+                            </a>
                         </div>
                         
                         <svg style="position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 50px; z-index: 1; top: 380px;" class="arch-connector-svg">
@@ -1088,23 +1126,29 @@
                         </svg>
                         
                         <!-- Layer 3: Database & Services -->
-                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(118, 75, 162, 0.08) 0%, rgba(10, 92, 245, 0.08) 100%); margin-top: 50px;">
+                        <div class="arch-layer" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(0, 102, 255, 0.08) 100%); margin-top: 50px;">
                             <div class="arch-layer-label">Data & Services</div>
-                            <div class="arch-box" style="background: linear-gradient(135deg, #0066cc 0%, #0a5cf5 100%); animation: float 4s ease-in-out infinite; animation-delay: 1.5s;">
-                                <i class="fas fa-database"></i>
-                                <span class="tech-name">PostgreSQL</span>
-                                <span class="tech-desc">Neon Cloud</span>
-                            </div>
-                            <div class="arch-box" style="background: linear-gradient(135deg, #635bff 0%, #0a2540 100%); animation: float 4s ease-in-out infinite; animation-delay: 2s;">
-                                <i class="fab fa-stripe"></i>
-                                <span class="tech-name">Stripe</span>
-                                <span class="tech-desc">PCI-DSS</span>
-                            </div>
-                            <div class="arch-box" style="background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%); animation: float 4s ease-in-out infinite; animation-delay: 2.5s;">
-                                <i class="fab fa-aws"></i>
-                                <span class="tech-name">AWS</span>
-                                <span class="tech-desc">Infrastructure</span>
-                            </div>
+                            <a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener noreferrer" class="arch-box-link">
+                                <div class="arch-box" style="background: linear-gradient(135deg, #0052cc 0%, #0066ff 100%); animation: float 4s ease-in-out infinite; animation-delay: 1.5s;">
+                                    <i class="fas fa-database"></i>
+                                    <span class="tech-name">PostgreSQL</span>
+                                    <span class="tech-desc">Neon Cloud</span>
+                                </div>
+                            </a>
+                            <a href="https://stripe.com/docs" target="_blank" rel="noopener noreferrer" class="arch-box-link">
+                                <div class="arch-box" style="background: linear-gradient(135deg, #635bff 0%, #0a2540 100%); animation: float 4s ease-in-out infinite; animation-delay: 2s;">
+                                    <i class="fab fa-stripe"></i>
+                                    <span class="tech-name">Stripe</span>
+                                    <span class="tech-desc">PCI-DSS</span>
+                                </div>
+                            </a>
+                            <a href="https://docs.aws.amazon.com" target="_blank" rel="noopener noreferrer" class="arch-box-link">
+                                <div class="arch-box" style="background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%); animation: float 4s ease-in-out infinite; animation-delay: 2.5s;">
+                                    <i class="fab fa-aws"></i>
+                                    <span class="tech-name">AWS</span>
+                                    <span class="tech-desc">Infrastructure</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1330,7 +1374,7 @@
                                 </div>
                             </div>
                             <div class="cost-savings">
-                                <div class="cost-savings-label">Économie vs France</div>
+                                <div class="cost-savings-label">Économies possibles</div>
                                 <div class="cost-savings-value">-215k€ (71%)</div>
                             </div>
                         </div>
@@ -1517,33 +1561,59 @@
             <div class="slide-number">11 / 12</div>
             <h2><i class="fas fa-star"></i> Recommandation finale</h2>
             <div class="slide-content">
-                <div class="highlight" style="font-size: 1.6em; padding: 60px; position: relative;">
-                    <strong style="font-size: 1.3em;"><i class="fas fa-star"></i> Option prioritaire</strong><br/><br/>
-                    <div style="font-size: 1.2em; margin-top: 20px;">
-                        Agence Liban qualifiée + Supervision interne
+                <div style="background: linear-gradient(135deg, rgba(0, 201, 167, 0.1) 0%, rgba(0, 102, 255, 0.1) 100%); padding: 50px; border-radius: 25px; margin-bottom: 50px; border: 3px solid var(--primary-green); box-shadow: 0 20px 60px rgba(0, 201, 167, 0.3); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0, 201, 167, 0.25) 0%, transparent 70%); border-radius: 50%;"></div>
+                    <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(0, 102, 255, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+                    <div style="position: relative; z-index: 1; text-align: center;">
+                        <div style="font-size: 3em; color: var(--primary-green); margin-bottom: 20px; animation: pulse 2s ease-in-out infinite;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div style="font-size: 2.2em; font-weight: 800; color: var(--dark); margin-bottom: 15px; line-height: 1.3;">
+                            Agence Liban qualifiée<br/>
+                            <span style="color: var(--primary-blue); font-size: 0.8em;">+ Supervision interne</span>
+                        </div>
+                        <div style="font-size: 1.3em; color: #666; margin-top: 20px; font-weight: 500;">
+                            Solution optimale en termes de coût, qualité et pérennité
+                        </div>
                     </div>
                 </div>
-                <div class="grid-3" style="margin-top: 50px;">
-                    <div class="card">
-                        <h4><i class="fas fa-euro-sign"></i> Avantages coûts</h4>
-                        <ul>
-                            <li>75 000 - 85 000 €</li>
-                            <li>Économie de 71% vs France</li>
+                
+                <div class="grid-3" style="margin-top: 40px;">
+                    <div class="card" style="border-top: 5px solid var(--primary-green);">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="font-size: 2.5em; color: var(--primary-green); margin-bottom: 10px;">
+                                <i class="fas fa-euro-sign"></i>
+                            </div>
+                        </div>
+                        <h4 style="text-align: center;"><i class="fas fa-euro-sign"></i> Avantages coûts</h4>
+                        <ul style="margin-top: 20px;">
+                            <li><strong>75 000 - 85 000 €</strong></li>
+                            <li>Économie de <strong style="color: var(--primary-green);">71%</strong> vs France</li>
                             <li>ROI optimisé</li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <h4><i class="fas fa-check-circle"></i> Qualité garantie</h4>
-                        <ul>
+                    <div class="card" style="border-top: 5px solid var(--primary-blue);">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="font-size: 2.5em; color: var(--primary-blue); margin-bottom: 10px;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <h4 style="text-align: center;"><i class="fas fa-check-circle"></i> Qualité garantie</h4>
+                        <ul style="margin-top: 20px;">
                             <li>Supervision interne continue</li>
                             <li>Conformité RGPD assurée</li>
                             <li>Modules écologiques intégrés</li>
                             <li>Standards techniques respectés</li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <h4><i class="fas fa-bullseye"></i> Conditions de succès</h4>
-                        <ul>
+                    <div class="card" style="border-top: 5px solid var(--accent-purple);">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="font-size: 2.5em; color: var(--accent-purple); margin-bottom: 10px;">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                        </div>
+                        <h4 style="text-align: center;"><i class="fas fa-bullseye"></i> Conditions de succès</h4>
+                        <ul style="margin-top: 20px;">
                             <li>Gouvernance formalisée</li>
                             <li>Contrats clairs</li>
                             <li>Rituels de contrôle qualité</li>
@@ -1660,7 +1730,7 @@
                     datasets: [{
                         data: [180, 160, 100, 180, 120, 80, 120, 60, 60, 40, 100, 80, 60],
                         backgroundColor: [
-                            '#0a5cf5', '#00d4aa', '#764ba2', '#0066cc', '#00b894',
+                            '#0066ff', '#00c9a7', '#7c3aed', '#0052cc', '#00a8cc',
                             '#43e97b', '#fa709a', '#fee140', '#30cfd0', '#a8edea',
                             '#fed6e3', '#d299c2', '#fef9d7'
                         ],
@@ -1684,11 +1754,11 @@
                             display: true,
                             text: 'Répartition des charges (heures)',
                             font: { size: 20, weight: 'bold', family: 'Poppins' },
-                            color: '#0a5cf5',
+                            color: '#0066ff',
                             padding: 20
                         },
                         tooltip: {
-                            backgroundColor: 'rgba(10, 92, 245, 0.9)',
+                            backgroundColor: 'rgba(0, 102, 255, 0.9)',
                             titleFont: { size: 14, weight: 'bold', family: 'Poppins' },
                             bodyFont: { size: 13, family: 'Poppins' },
                             padding: 12,
@@ -1725,15 +1795,15 @@
                         label: 'Coût maximum (k€)',
                         data: [300, 290, 85, 100],
                         backgroundColor: [
-                            'rgba(10, 92, 245, 0.8)',
-                            'rgba(10, 92, 245, 0.8)',
-                            'rgba(0, 212, 170, 0.9)',
+                            'rgba(0, 102, 255, 0.8)',
+                            'rgba(0, 102, 255, 0.8)',
+                            'rgba(0, 201, 167, 0.9)',
                             'rgba(118, 75, 162, 0.8)'
                         ],
                         borderColor: [
-                            '#0a5cf5',
-                            '#0a5cf5',
-                            '#00d4aa',
+                            '#0066ff',
+                            '#0066ff',
+                            '#00c9a7',
                             '#764ba2'
                         ],
                         borderWidth: 3,
@@ -1743,15 +1813,15 @@
                         label: 'Coût minimum (k€)',
                         data: [160, 220, 75, 100],
                         backgroundColor: [
-                            'rgba(10, 92, 245, 0.4)',
-                            'rgba(10, 92, 245, 0.4)',
-                            'rgba(0, 212, 170, 0.5)',
+                            'rgba(0, 102, 255, 0.4)',
+                            'rgba(0, 102, 255, 0.4)',
+                            'rgba(0, 201, 167, 0.5)',
                             'rgba(118, 75, 162, 0.4)'
                         ],
                         borderColor: [
-                            '#0a5cf5',
-                            '#0a5cf5',
-                            '#00d4aa',
+                            '#0066ff',
+                            '#0066ff',
+                            '#00c9a7',
                             '#764ba2'
                         ],
                         borderWidth: 2,
@@ -1778,7 +1848,7 @@
                             display: false
                         },
                         tooltip: {
-                            backgroundColor: 'rgba(10, 92, 245, 0.95)',
+                            backgroundColor: 'rgba(0, 102, 255, 0.95)',
                             titleFont: { size: 14, weight: 'bold', family: 'Poppins' },
                             bodyFont: { size: 13, family: 'Poppins' },
                             padding: 15,
@@ -1800,8 +1870,8 @@
                                     type: 'box',
                                     yMin: 2,
                                     yMax: 3,
-                                    backgroundColor: 'rgba(0, 212, 170, 0.1)',
-                                    borderColor: 'rgba(0, 212, 170, 0.5)',
+                                    backgroundColor: 'rgba(0, 201, 167, 0.15)',
+                                    borderColor: 'rgba(0, 201, 167, 0.6)',
                                     borderWidth: 2
                                 }
                             }
@@ -1811,7 +1881,7 @@
                         x: {
                             beginAtZero: true,
                             grid: {
-                                color: 'rgba(10, 92, 245, 0.1)',
+                                color: 'rgba(0, 102, 255, 0.15)',
                                 lineWidth: 1
                             },
                             ticks: {
