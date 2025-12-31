@@ -19,13 +19,13 @@ La présentation couvre :
 2. **Contexte & Vision** - Objectifs et valeurs du projet
 3. **Périmètre fonctionnel** - Fonctionnalités principales
 4. **Architecture technique** - Stack technologique recommandé
-5. **Estimation des charges** - 1 800-2 000 heures avec graphique
+5. **Estimation des charges** - Répartition des charges avec graphique
 6. **Scénarios de réalisation** - Toutes les options comparées
 7. **Comparaison des coûts** - Visualisation graphique des budgets
 8. **RGPD & Sécurité** - Mesures techniques et organisationnelles
 9. **Développement durable & ESS** - Impact écologique et social
 10. **Analyse des risques** - Tableau complet avec mitigations
-11. **Recommandation finale** - Option prioritaire : Agence Liban
+11. **Recommandation finale** - Option prioritaire : Option Liban
 12. **Conclusion** - Synthèse et questions
 
 ## ⏱️ Durée estimée

@@ -52,7 +52,7 @@ graph LR
 - Moins optimisée (sécurité/maintenabilité), mais compétence JS unique.
 
 ---
-## Charge & séniorité (1 800 – 2 000 h)
+## Charge & séniorité
 ```mermaid
 pie showData
   "Homepage, filtres" : 180
@@ -76,7 +76,7 @@ pie showData
 - **Agence FR** : 160–300 k€ HT ; 9–12 mois ; + qualité contractuelle ; – coût haut.
 - **Équipe interne FR** : 220–290 k€/an ; 9–12 mois ; + contrôle ; – charge RH.
 - **Stagiaires seuls** : non viable.
-- **Agence Liban supervisée** : 75–85 k€ ; + coût réduit, supervision interne pour qualité/ESS.
+- **Option Liban supervisée** : 75–85 k€ ; + coût réduit, supervision interne pour qualité/ESS.
 - **Freelances internationaux** : 100 k€+ ; + flex ; – coordination/dépendance.
 
 ---
@@ -108,12 +108,12 @@ pie showData
 - Agence France : 160–300 k€
 - Équipe interne France : 220–290 k€
 - Stagiaires : non viable
-- Agence Liban : 75–85 k€
+- Option Liban : 75–85 k€
 - Freelances internationaux : 100 k€+
 
 ---
 ## Recommandation finale
-- Option prioritaire : agence Liban qualifiée + supervision interne pour garantir qualité, RGPD et suivi écologique.
+- Option prioritaire : option Liban qualifiée + supervision interne pour garantir qualité, RGPD et suivi écologique.
 - Démarrer avec socle Next.js + Laravel + NestJS ; intégrer KPIs carbone dès la conception.
 - Formaliser gouvernance, contrats, et rituels de contrôle qualité/sécurité dès le lancement.
 

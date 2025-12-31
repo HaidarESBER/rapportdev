@@ -489,6 +489,317 @@
             color: var(--primary-green);
         }
 
+        .automation-feature {
+            position: relative;
+            padding-left: 50px;
+            margin: 15px 0;
+        }
+
+        .automation-feature::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.8em;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 201, 167, 0.1));
+            border-radius: 10px;
+        }
+
+        .benefit-icon {
+            transition: all 0.3s ease;
+        }
+
+        .benefit-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+            color: var(--primary-green);
+        }
+
+        .process-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, #0066ff 0%, #00c9a7 100%);
+            color: white;
+            padding: 25px 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+            text-align: center;
+            min-width: 150px;
+            position: relative;
+            transition: all 0.4s ease;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .process-step:nth-child(2) { animation-delay: 0.5s; }
+        .process-step:nth-child(3) { animation-delay: 1s; }
+        .process-step:nth-child(4) { animation-delay: 1.5s; }
+        .process-step:nth-child(5) { animation-delay: 2s; }
+
+        .process-step:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.5);
+        }
+
+        .process-step i {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .process-step .step-label {
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .process-arrow {
+            font-size: 2em;
+            color: var(--primary-blue);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .feature-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.15);
+            border-top: 6px solid;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0066ff, #00c9a7);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.25);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card.blue { border-top-color: var(--primary-blue); }
+        .feature-card.green { border-top-color: var(--primary-green); }
+        .feature-card.purple { border-top-color: var(--accent-purple); }
+        .feature-card.cyan { border-top-color: #00a8cc; }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-card.blue .feature-icon {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.15), rgba(0, 102, 255, 0.05));
+            color: var(--primary-blue);
+        }
+
+        .feature-card.green .feature-icon {
+            background: linear-gradient(135deg, rgba(0, 201, 167, 0.15), rgba(0, 201, 167, 0.05));
+            color: var(--primary-green);
+        }
+
+        .feature-card.purple .feature-icon {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05));
+            color: var(--accent-purple);
+        }
+
+        .feature-card.cyan .feature-icon {
+            background: linear-gradient(135deg, rgba(0, 168, 204, 0.15), rgba(0, 168, 204, 0.05));
+            color: #00a8cc;
+        }
+
+        .format-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 201, 167, 0.1));
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--dark);
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .format-badge:hover {
+            transform: scale(1.1);
+            border-color: var(--primary-blue);
+            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.2);
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .integration-item {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 247, 255, 0.9));
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(0, 102, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .integration-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .integration-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
+        }
+
+        .integration-item:hover::before {
+            opacity: 1;
+        }
+
+        .integration-item i {
+            font-size: 3em;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .integration-item span {
+            font-weight: 700;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .benefit-card-large {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 247, 255, 0.95));
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.15);
+            text-align: center;
+            border: 3px solid;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card-large::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .benefit-card-large:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(0, 102, 255, 0.3);
+        }
+
+        .benefit-card-large:hover::after {
+            opacity: 1;
+        }
+
+        .benefit-card-large.blue { border-color: var(--primary-blue); }
+        .benefit-card-large.green { border-color: var(--primary-green); }
+        .benefit-card-large.purple { border-color: var(--accent-purple); }
+        .benefit-card-large.cyan { border-color: #00a8cc; }
+
+        .benefit-icon-large {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-card-large.blue .benefit-icon-large {
+            background: linear-gradient(135deg, var(--primary-blue), #0052cc);
+            color: white;
+        }
+
+        .benefit-card-large.green .benefit-icon-large {
+            background: linear-gradient(135deg, var(--primary-green), #00a8cc);
+            color: white;
+        }
+
+        .benefit-card-large.purple .benefit-icon-large {
+            background: linear-gradient(135deg, var(--accent-purple), #6d28d9);
+            color: white;
+        }
+
+        .benefit-card-large.cyan .benefit-icon-large {
+            background: linear-gradient(135deg, #00a8cc, #0099cc);
+            color: white;
+        }
+
         .recommended-badge {
             position: absolute;
             top: -10px;
@@ -980,7 +1291,7 @@
     <div class="presentation-container">
         <!-- Slide 1: Title -->
         <div class="slide title-slide" id="slide1">
-            <div class="slide-number">1 / 12</div>
+            <div class="slide-number">1 / 19</div>
             <img src="https://laboccaz.com/wp-content/uploads/2024/12/logo-bleu-vert.webp" alt="LabOccaz" class="logo-large">
             <h1>Marketplace B2B Laboratoire</h1>
             <div class="subtitle">Analyse comparative des options de développement</div>
@@ -994,7 +1305,7 @@
 
         <!-- Slide 2: Contexte -->
         <div class="slide" id="slide2">
-            <div class="slide-number">2 / 12</div>
+            <div class="slide-number">2 / 19</div>
             <h2><i class="fas fa-lightbulb"></i> Contexte & Vision</h2>
             <div class="slide-content">
                 <div class="grid-2">
@@ -1026,7 +1337,7 @@
 
         <!-- Slide 3: Périmètre fonctionnel -->
         <div class="slide" id="slide3">
-            <div class="slide-number">3 / 12</div>
+            <div class="slide-number">3 / 19</div>
             <h2><i class="fas fa-list-check"></i> Périmètre fonctionnel</h2>
             <div class="slide-content">
                 <div class="grid-3">
@@ -1065,7 +1376,7 @@
 
         <!-- Slide 4: Architecture technique -->
         <div class="slide" id="slide4">
-            <div class="slide-number">4 / 12</div>
+            <div class="slide-number">4 / 19</div>
             <h2><i class="fas fa-sitemap"></i> Architecture technique</h2>
             <div class="slide-content">
                 <div class="architecture-diagram">
@@ -1180,25 +1491,27 @@
 
         <!-- Slide 5: Estimation des charges -->
         <div class="slide" id="slide5">
-            <div class="slide-number">5 / 12</div>
+            <div class="slide-number">5 / 19</div>
             <h2><i class="fas fa-clock"></i> Estimation des charges</h2>
             <div class="slide-content">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="number">1 800-2 000</div>
-                        <div class="label">Heures totales</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="number">60%</div>
-                        <div class="label">Juniors</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="number">40%</div>
-                        <div class="label">Seniors</div>
-                    </div>
-                </div>
                 <div class="chart-container">
                     <canvas id="hoursChart"></canvas>
+                </div>
+                <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 50px auto 0;">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #0066ff 0%, #00c9a7 100%); padding: 50px; border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 102, 255, 0.3); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <div class="number" style="font-size: 4.5em; font-weight: 900; margin-bottom: 15px; text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">60%</div>
+                            <div class="label" style="font-size: 1.5em; font-weight: 600; opacity: 1; letter-spacing: 1px;">Juniors</div>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #00c9a7 0%, #00a8cc 100%); padding: 50px; border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 201, 167, 0.3); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <div class="number" style="font-size: 4.5em; font-weight: 900; margin-bottom: 15px; text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">40%</div>
+                            <div class="label" style="font-size: 1.5em; font-weight: 600; opacity: 1; letter-spacing: 1px;">Seniors</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="grid-2" style="margin-top: 40px;">
                     <div class="card">
@@ -1227,7 +1540,7 @@
 
         <!-- Slide 6: Scénarios de réalisation -->
         <div class="slide" id="slide6">
-            <div class="slide-number">6 / 12</div>
+            <div class="slide-number">6 / 19</div>
             <h2><i class="fas fa-route"></i> Scénarios de réalisation</h2>
             <div class="slide-content">
                 <div class="grid-2">
@@ -1256,7 +1569,7 @@
                         </ul>
                     </div>
                     <div class="card" style="border: 3px solid var(--primary-green);">
-                        <h4><i class="fas fa-star"></i> Agence Liban supervisée ⭐</h4>
+                        <h4><i class="fas fa-star"></i> Option Liban supervisée ⭐</h4>
                         <p><strong>Coût :</strong> 75 000 - 85 000 €</p>
                         <p><strong>Configuration A :</strong> 2 seniors + 4 juniors</p>
                         <p><strong>Configuration B :</strong> 1 senior + 5 juniors</p>
@@ -1283,7 +1596,7 @@
 
         <!-- Slide 7: Comparaison des coûts -->
         <div class="slide" id="slide7">
-            <div class="slide-number">7 / 12</div>
+            <div class="slide-number">7 / 19</div>
             <h2><i class="fas fa-euro-sign"></i> Comparaison des coûts par option</h2>
             <div class="slide-content">
                 <div class="cost-comparison-container">
@@ -1351,7 +1664,7 @@
                         <div class="cost-card best" style="animation: fadeInUp 0.8s ease;">
                             <div class="cost-card-header">
                                 <div class="cost-card-title">
-                                    <i class="fas fa-star"></i> Agence Liban
+                                    <i class="fas fa-star"></i> Option Liban
                                 </div>
                                 <div class="cost-badge">85k€</div>
                             </div>
@@ -1412,7 +1725,7 @@
 
         <!-- Slide 8: RGPD & Sécurité -->
         <div class="slide" id="slide8">
-            <div class="slide-number">8 / 12</div>
+            <div class="slide-number">8 / 19</div>
             <h2><i class="fas fa-shield-alt"></i> RGPD & Sécurité</h2>
             <div class="slide-content">
                 <div class="grid-2">
@@ -1468,7 +1781,7 @@
 
         <!-- Slide 9: Développement durable -->
         <div class="slide" id="slide9">
-            <div class="slide-number">9 / 12</div>
+            <div class="slide-number">9 / 19</div>
             <h2><i class="fas fa-leaf"></i> Développement durable & ESS</h2>
             <div class="slide-content">
                 <div class="grid-2">
@@ -1502,7 +1815,7 @@
 
         <!-- Slide 10: Analyse des risques -->
         <div class="slide" id="slide10">
-            <div class="slide-number">10 / 12</div>
+            <div class="slide-number">10 / 19</div>
             <h2><i class="fas fa-exclamation-triangle"></i> Analyse des risques</h2>
             <div class="slide-content">
                 <table>
@@ -1556,9 +1869,543 @@
             </div>
         </div>
 
-        <!-- Slide 11: Recommandation -->
+        <!-- Slide 11: Automatisation - Introduction -->
         <div class="slide" id="slide11">
-            <div class="slide-number">11 / 12</div>
+            <div class="slide-number">11 / 19</div>
+            <h2><i class="fas fa-cogs"></i> Automatisation & Gestion avancée</h2>
+            <div class="slide-content">
+                <div style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 201, 167, 0.08) 100%); padding: 50px; border-radius: 30px; margin: 30px 0; border: 4px solid var(--primary-blue); box-shadow: 0 25px 70px rgba(0, 102, 255, 0.25); text-align: center; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%); border-radius: 50%; animation: pulse 4s ease-in-out infinite;"></div>
+                    <div style="position: absolute; bottom: -80px; left: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(0, 201, 167, 0.15) 0%, transparent 70%); border-radius: 50%; animation: pulse 5s ease-in-out infinite; animation-delay: 2s;"></div>
+                    
+                    <div style="position: relative; z-index: 1;">
+                        <div style="font-size: 5em; color: var(--primary-blue); margin-bottom: 25px; animation: float 3s ease-in-out infinite;">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 style="font-size: 2.5em; color: var(--dark); margin-bottom: 25px; font-weight: 800;">Haut niveau d'automatisation requis</h3>
+                        <p style="font-size: 1.4em; line-height: 1.8; color: var(--dark); margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            Compte tenu de la nature <strong style="color: var(--primary-blue);">B2B</strong> de la marketplace, de la <strong style="color: var(--primary-green);">volumétrie potentielle</strong> des données et du <strong style="color: var(--accent-purple);">positionnement professionnel</strong> de la plateforme
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid-4" style="margin-top: 50px;">
+                    <div class="feature-card blue" style="text-align: center;">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-paper"></i>
+                        </div>
+                        <h4 style="font-size: 1.3em; margin-bottom: 15px; color: var(--dark);">Limiter opérations manuelles</h4>
+                        <p style="color: #666; font-size: 0.95em;">Automatisation complète des processus</p>
+                    </div>
+                    <div class="feature-card green" style="text-align: center;">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 style="font-size: 1.3em; margin-bottom: 15px; color: var(--dark);">Réduire risques d'erreur</h4>
+                        <p style="color: #666; font-size: 0.95em;">Validation et contrôle automatiques</p>
+                    </div>
+                    <div class="feature-card purple" style="text-align: center;">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 style="font-size: 1.3em; margin-bottom: 15px; color: var(--dark);">Améliorer productivité</h4>
+                        <p style="color: #666; font-size: 0.95em;">Gain de temps pour les équipes</p>
+                    </div>
+                    <div class="feature-card cyan" style="text-align: center;">
+                        <div class="feature-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h4 style="font-size: 1.3em; margin-bottom: 15px; color: var(--dark);">Assurer scalabilité</h4>
+                        <p style="color: #666; font-size: 0.95em;">Croissance maîtrisée</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Automatisation des processus métier -->
+        <div class="slide" id="slide12">
+            <div class="slide-number">12 / 19</div>
+            <h2><i class="fas fa-sync-alt"></i> Automatisation des processus métier</h2>
+            <div class="slide-content">
+                <div style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 201, 167, 0.08) 100%); padding: 35px; border-radius: 20px; margin-bottom: 40px; border-left: 6px solid var(--primary-blue); box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);">
+                    <p style="font-size: 1.2em; margin: 0; font-weight: 600;">
+                        Mécanismes d'automatisation couvrant l'<strong style="color: var(--primary-blue);">ensemble du cycle de vie</strong> des données et des transactions
+                    </p>
+                </div>
+
+                <!-- Flux de commandes visuel -->
+                <div style="margin: 40px 0;">
+                    <h3 style="text-align: center; color: var(--primary-blue); font-size: 1.8em; margin-bottom: 30px;">
+                        <i class="fas fa-shopping-cart"></i> Flux de commandes automatisé
+                    </h3>
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <i class="fas fa-plus-circle"></i>
+                            <div class="step-label">Création</div>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="step-label">Validation</div>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step">
+                            <i class="fas fa-credit-card"></i>
+                            <div class="step-label">Paiement</div>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step">
+                            <i class="fas fa-file-invoice"></i>
+                            <div class="step-label">Facturation</div>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step">
+                            <i class="fas fa-truck"></i>
+                            <div class="step-label">Expédition</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-showcase">
+                    <div class="feature-card green">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Échanges prestataires</h4>
+                        <ul style="text-align: left;">
+                            <li>Paiement (Stripe)</li>
+                            <li>Transporteurs (API)</li>
+                            <li>Notifications automatiques</li>
+                            <li>Webhooks & callbacks</li>
+                            <li>Synchronisation temps réel</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card purple">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Génération documents</h4>
+                        <ul style="text-align: left;">
+                            <li>Factures PDF automatiques</li>
+                            <li>Confirmations de commande</li>
+                            <li>Exports comptables</li>
+                            <li>Archivage automatique</li>
+                            <li>Traçabilité complète</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card cyan">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Tâches récurrentes</h4>
+                        <ul style="text-align: left;">
+                            <li>Gestion des statuts</li>
+                            <li>Relances automatiques</li>
+                            <li>Alertes & notifications</li>
+                            <li>Contrôles de cohérence</li>
+                            <li>Calculs indicateurs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight" style="margin-top: 50px; font-size: 1.2em;">
+                    <strong><i class="fas fa-check-circle"></i> Caractéristiques</strong>
+                    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-sliders-h" style="font-size: 1.5em;"></i>
+                            <span>Configurable</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-history" style="font-size: 1.5em;"></i>
+                            <span>Traçable</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-clipboard-check" style="font-size: 1.5em;"></i>
+                            <span>Auditable via back-office</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Import/Export & Interopérabilité -->
+        <div class="slide" id="slide13">
+            <div class="slide-number">13 / 19</div>
+            <h2><i class="fas fa-exchange-alt"></i> Import/Export & Interopérabilité</h2>
+            <div class="slide-content">
+                <div style="background: linear-gradient(135deg, rgba(0, 201, 167, 0.08) 0%, rgba(0, 102, 255, 0.08) 100%); padding: 35px; border-radius: 20px; margin-bottom: 40px; border-left: 6px solid var(--primary-green); box-shadow: 0 10px 30px rgba(0, 201, 167, 0.15);">
+                    <p style="font-size: 1.2em; margin: 0; font-weight: 600;">
+                        Garantir l'<strong style="color: var(--primary-green);">interopérabilité</strong> avec les systèmes existants et futurs (ERP, outils comptables, logistiques, reporting ESG)
+                    </p>
+                </div>
+
+                <div style="text-align: center; margin: 40px 0;">
+                    <h3 style="color: var(--primary-green); font-size: 1.6em; margin-bottom: 30px;">
+                        <i class="fas fa-file-alt"></i> Formats supportés
+                    </h3>
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+                        <div class="format-badge">
+                            <i class="fas fa-file-csv" style="font-size: 1.5em; color: var(--primary-blue);"></i>
+                            <span>CSV</span>
+                        </div>
+                        <div class="format-badge">
+                            <i class="fas fa-file-excel" style="font-size: 1.5em; color: var(--primary-green);"></i>
+                            <span>Excel (XLS/XLSX)</span>
+                        </div>
+                        <div class="format-badge">
+                            <i class="fas fa-code" style="font-size: 1.5em; color: var(--accent-purple);"></i>
+                            <span>JSON</span>
+                        </div>
+                        <div class="format-badge">
+                            <i class="fas fa-cloud" style="font-size: 1.5em; color: #00a8cc;"></i>
+                            <span>API REST Sécurisées</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2" style="margin-top: 40px;">
+                    <div class="feature-card green">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Fonctionnalités export</h4>
+                        <ul style="text-align: left;">
+                            <li><strong>Export complet</strong> ou partiel des données</li>
+                            <li>Produits, commandes, clients</li>
+                            <li>Factures & indicateurs</li>
+                            <li><strong>Planification</strong> d'exports automatiques</li>
+                            <li>Gestion des versions</li>
+                            <li>Historisation des imports</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card purple">
+                        <div class="feature-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Import de données</h4>
+                        <ul style="text-align: left;">
+                            <li>Import depuis <strong>sources hétérogènes</strong></li>
+                            <li>Validation automatique</li>
+                            <li>Mapping intelligent</li>
+                            <li>Gestion des erreurs</li>
+                            <li>Rapports d'import détaillés</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px;">
+                    <h3 style="text-align: center; color: var(--primary-blue); font-size: 1.6em; margin-bottom: 30px;">
+                        <i class="fas fa-puzzle-piece"></i> Intégrations disponibles
+                    </h3>
+                    <div class="integration-grid">
+                        <div class="integration-item">
+                            <i class="fas fa-server"></i>
+                            <span>ERP</span>
+                        </div>
+                        <div class="integration-item">
+                            <i class="fas fa-calculator"></i>
+                            <span>Comptabilité</span>
+                        </div>
+                        <div class="integration-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Logistique</span>
+                        </div>
+                        <div class="integration-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Reporting ESG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Structuration & Normalisation -->
+        <div class="slide" id="slide14">
+            <div class="slide-number">14 / 19</div>
+            <h2><i class="fas fa-database"></i> Structuration & Normalisation des données</h2>
+            <div class="slide-content">
+                <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(0, 102, 255, 0.08) 100%); padding: 35px; border-radius: 20px; margin-bottom: 40px; border-left: 6px solid var(--accent-purple); box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);">
+                    <p style="font-size: 1.2em; margin: 0; font-weight: 600;">
+                        Outil essentiel pour garantir la <strong style="color: var(--accent-purple);">qualité des données</strong> dans un contexte où les vendeurs (laboratoires) fournissent des données <strong style="color: var(--primary-blue);">hétérogènes</strong> sur leurs équipements
+                    </p>
+                </div>
+
+                <div class="feature-showcase">
+                    <div class="feature-card purple">
+                        <div class="feature-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Mapping des champs</h4>
+                        <ul style="text-align: left;">
+                            <li>Mapping automatique des champs entrants</li>
+                            <li>Vers le modèle de données interne</li>
+                            <li>Règles de transformation configurables</li>
+                            <li>Gestion des correspondances</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card blue">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Validation des formats</h4>
+                        <ul style="text-align: left;">
+                            <li>Validation des types de données</li>
+                            <li>Vérification des unités</li>
+                            <li>Champs obligatoires</li>
+                            <li>Règles métier personnalisées</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card green">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Détection incohérences</h4>
+                        <ul style="text-align: left;">
+                            <li>Détection automatique des erreurs</li>
+                            <li>Correction intelligente</li>
+                            <li>Suggestions d'amélioration</li>
+                            <li>Rapports de qualité</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card cyan">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Prévisualisation & Gestion</h4>
+                        <ul style="text-align: left;">
+                            <li>Prévisualisation avant import</li>
+                            <li>Gestion des erreurs</li>
+                            <li>Gestion des rejets</li>
+                            <li>Historique des corrections</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Gestion en masse -->
+        <div class="slide" id="slide15">
+            <div class="slide-number">15 / 19</div>
+            <h2><i class="fas fa-layer-group"></i> Gestion en masse des produits</h2>
+            <div class="slide-content">
+                <div style="background: linear-gradient(135deg, rgba(0, 168, 204, 0.08) 0%, rgba(0, 201, 167, 0.08) 100%); padding: 35px; border-radius: 20px; margin-bottom: 40px; border-left: 6px solid #00a8cc; box-shadow: 0 10px 30px rgba(0, 168, 204, 0.15);">
+                    <p style="font-size: 1.2em; margin: 0; font-weight: 600;">
+                        Fonctionnalités <strong style="color: #00a8cc;">indispensables</strong> pour faciliter l'onboarding des vendeurs et accélérer la mise en ligne de <strong style="color: var(--primary-green);">volumes importants</strong> de matériel
+                    </p>
+                </div>
+
+                <div class="feature-showcase">
+                    <div class="feature-card cyan">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-import"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Import de catalogues</h4>
+                        <ul style="text-align: left;">
+                            <li>Ajout de <strong>catalogues complets</strong> via import</li>
+                            <li>Support formats multiples</li>
+                            <li>Traitement par lots</li>
+                            <li>Validation en masse</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card blue">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Caractéristiques techniques</h4>
+                        <ul style="text-align: left;">
+                            <li>Gestion des caractéristiques détaillées</li>
+                            <li>Spécifications techniques complètes</li>
+                            <li>Métadonnées enrichies</li>
+                            <li>Taxonomie normalisée</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card green">
+                        <div class="feature-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Association médias</h4>
+                        <ul style="text-align: left;">
+                            <li>Images produits en masse</li>
+                            <li>Documents techniques</li>
+                            <li>Fiches techniques PDF</li>
+                            <li>Vidéos de démonstration</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card purple">
+                        <div class="feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h4 style="font-size: 1.4em; margin-bottom: 20px; color: var(--dark);">Mise à jour groupée</h4>
+                        <ul style="text-align: left;">
+                            <li>Prix en masse</li>
+                            <li>Stocks groupés</li>
+                            <li>Statuts multiples</li>
+                            <li>Métadonnées batch</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight" style="margin-top: 50px;">
+                    <strong><i class="fas fa-clock"></i> Validation & Publication</strong>
+                    <div style="margin-top: 20px; font-size: 1.2em;">
+                        Validation et publication <strong>différée</strong> pour contrôle qualité avant mise en ligne
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: CRM intégré -->
+        <div class="slide" id="slide16">
+            <div class="slide-number">16 / 19</div>
+            <h2><i class="fas fa-users-cog"></i> CRM intégré au back-office</h2>
+            <div class="slide-content">
+                <div style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 201, 167, 0.08) 100%); padding: 35px; border-radius: 20px; margin-bottom: 40px; border-left: 6px solid var(--primary-blue); box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);">
+                    <p style="font-size: 1.2em; margin: 0; font-weight: 600;">
+                        Module CRM intégré pour <strong style="color: var(--primary-blue);">centraliser la relation</strong> avec les utilisateurs professionnels (acheteurs et vendeurs)
+                    </p>
+                </div>
+
+                <div class="grid-2" style="margin-top: 30px; gap: 30px;">
+                    <div class="feature-card blue" style="min-height: 450px;">
+                        <div class="feature-icon" style="width: 100px; height: 100px; margin: 0 auto 30px;">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4 style="text-align: center; font-size: 1.6em; margin-bottom: 30px; color: var(--dark);">
+                            <i class="fas fa-building"></i> Gestion des comptes
+                        </h4>
+                        <ul style="margin-top: 25px; text-align: left;">
+                            <li><strong>Comptes entreprises</strong> complets</li>
+                            <li>Gestion des contacts multiples</li>
+                            <li>Hiérarchie organisationnelle</li>
+                            <li>Profils détaillés</li>
+                            <li>Historique complet des interactions</li>
+                            <li>Suivi des commandes</li>
+                            <li>Historique des transactions</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card green" style="min-height: 450px;">
+                        <div class="feature-icon" style="width: 100px; height: 100px; margin: 0 auto 30px;">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4 style="text-align: center; font-size: 1.6em; margin-bottom: 30px; color: var(--dark);">
+                            <i class="fas fa-chart-pie"></i> Segmentation & Opportunités
+                        </h4>
+                        <ul style="margin-top: 25px; text-align: left;">
+                            <li><strong>Segmentation</strong> avancée des utilisateurs</li>
+                            <li>Critères personnalisables</li>
+                            <li>Gestion des opportunités</li>
+                            <li>Suivi des demandes spécifiques</li>
+                            <li>Pipelines de vente</li>
+                            <li>Alertes et rappels</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 50px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(0, 102, 255, 0.08) 100%); border: 3px solid var(--accent-purple); box-shadow: 0 15px 40px rgba(124, 58, 237, 0.2);">
+                    <h4 style="text-align: center; font-size: 2em; margin-bottom: 35px; color: var(--accent-purple);">
+                        <i class="fas fa-shield-alt"></i> Conformité RGPD
+                    </h4>
+                    <div class="grid-3">
+                        <div class="integration-item" style="padding: 35px;">
+                            <i class="fas fa-history" style="font-size: 3em; color: var(--accent-purple); margin-bottom: 20px;"></i>
+                            <div style="font-weight: 700; margin-bottom: 15px; font-size: 1.2em;">Traçabilité</div>
+                            <div style="font-size: 1em; color: #666;">Historique complet des actions</div>
+                        </div>
+                        <div class="integration-item" style="padding: 35px;">
+                            <i class="fas fa-check-square" style="font-size: 3em; color: var(--accent-purple); margin-bottom: 20px;"></i>
+                            <div style="font-weight: 700; margin-bottom: 15px; font-size: 1.2em;">Consentement</div>
+                            <div style="font-size: 1em; color: #666;">Gestion des consentements</div>
+                        </div>
+                        <div class="integration-item" style="padding: 35px;">
+                            <i class="fas fa-download" style="font-size: 3em; color: var(--accent-purple); margin-bottom: 20px;"></i>
+                            <div style="font-weight: 700; margin-bottom: 15px; font-size: 1.2em;">Export</div>
+                            <div style="font-size: 1em; color: #666;">Vers outils externes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Bénéfices & Enjeux -->
+        <div class="slide" id="slide17">
+            <div class="slide-number">17 / 19</div>
+            <h2><i class="fas fa-trophy"></i> Bénéfices & Enjeux</h2>
+            <div class="slide-content">
+                <div class="benefit-grid">
+                    <div class="benefit-card-large green">
+                        <div class="benefit-icon-large">
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <h4 style="font-size: 1.8em; margin-bottom: 20px; color: var(--dark);">
+                            Réduction des coûts
+                        </h4>
+                        <p style="font-size: 1.2em; color: #666; line-height: 1.6;">
+                            <strong style="color: var(--primary-green);">Réduction significative</strong> des coûts opérationnels grâce à l'automatisation complète des processus
+                        </p>
+                    </div>
+
+                    <div class="benefit-card-large blue">
+                        <div class="benefit-icon-large">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4 style="font-size: 1.8em; margin-bottom: 20px; color: var(--dark);">
+                            Fiabilité & Qualité
+                        </h4>
+                        <p style="font-size: 1.2em; color: #666; line-height: 1.6;">
+                            <strong style="color: var(--primary-blue);">Amélioration</strong> de la fiabilité et de la qualité des données grâce aux outils de validation et normalisation
+                        </p>
+                    </div>
+
+                    <div class="benefit-card-large purple">
+                        <div class="benefit-icon-large">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 style="font-size: 1.8em; margin-bottom: 20px; color: var(--dark);">
+                            Scalabilité
+                        </h4>
+                        <p style="font-size: 1.2em; color: #666; line-height: 1.6;">
+                            <strong style="color: var(--accent-purple);">Montée en charge maîtrisée</strong> de la plateforme grâce à l'automatisation et la gestion en masse
+                        </p>
+                    </div>
+
+                    <div class="benefit-card-large cyan">
+                        <div class="benefit-icon-large">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4 style="font-size: 1.8em; margin-bottom: 20px; color: var(--dark);">
+                            Pilotage stratégique
+                        </h4>
+                        <p style="font-size: 1.2em; color: #666; line-height: 1.6;">
+                            <strong style="color: #00a8cc;">Meilleure exploitation</strong> des données à des fins de pilotage stratégique, financier et environnemental
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight" style="margin-top: 50px; font-size: 1.4em; padding: 60px;">
+                    <div style="font-size: 4em; margin-bottom: 25px; animation: pulse 2s ease-in-out infinite;">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <strong style="font-size: 1.3em; display: block; margin-bottom: 20px;">Expérience améliorée</strong>
+                    <div style="font-size: 1.2em; opacity: 0.95;">
+                        Pour les équipes internes et les partenaires
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: Recommandation -->
+        <div class="slide" id="slide18">
+            <div class="slide-number">18 / 19</div>
             <h2><i class="fas fa-star"></i> Recommandation finale</h2>
             <div class="slide-content">
                 <div style="background: linear-gradient(135deg, rgba(0, 201, 167, 0.1) 0%, rgba(0, 102, 255, 0.1) 100%); padding: 50px; border-radius: 25px; margin-bottom: 50px; border: 3px solid var(--primary-green); box-shadow: 0 20px 60px rgba(0, 201, 167, 0.3); position: relative; overflow: hidden;">
@@ -1569,7 +2416,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div style="font-size: 2.2em; font-weight: 800; color: var(--dark); margin-bottom: 15px; line-height: 1.3;">
-                            Agence Liban qualifiée<br/>
+                            Option Liban qualifiée<br/>
                             <span style="color: var(--primary-blue); font-size: 0.8em;">+ Supervision interne</span>
                         </div>
                         <div style="font-size: 1.3em; color: #666; margin-top: 20px; font-weight: 500;">
@@ -1624,9 +2471,9 @@
             </div>
         </div>
 
-        <!-- Slide 12: Conclusion -->
-        <div class="slide title-slide" id="slide12">
-            <div class="slide-number">12 / 12</div>
+        <!-- Slide 19: Conclusion -->
+        <div class="slide title-slide" id="slide19">
+            <div class="slide-number">19 / 19</div>
             <img src="https://laboccaz.com/wp-content/uploads/2024/12/logo-bleu-vert.webp" alt="LabOccaz" class="logo-large">
             <h1>Merci pour votre attention</h1>
             <div class="subtitle" style="margin-top: 60px;">
@@ -1652,7 +2499,7 @@
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 12;
+        const totalSlides = 19;
 
         function updateProgress() {
             const progress = (currentSlide / totalSlides) * 100;
@@ -1790,7 +2637,7 @@
             new Chart(costCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['Agence France', 'Équipe interne', 'Agence Liban ⭐', 'Freelances'],
+                    labels: ['Agence France', 'Équipe interne', 'Option Liban ⭐', 'Freelances'],
                     datasets: [{
                         label: 'Coût maximum (k€)',
                         data: [300, 290, 85, 100],
