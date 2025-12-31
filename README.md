@@ -2,15 +2,8 @@
 
 ## 🎯 Présentation interactive HTML
 
-Présentation complète de 12 slides sur l'analyse comparative des options de développement pour une marketplace B2B laboratoire.
+Présentation complète sur l'analyse comparative des options de développement pour une marketplace B2B laboratoire.
 
-## 🚀 Utilisation
-
-1. **Ouvrir le fichier** : Double-cliquez sur `index.html` ou ouvrez-le dans votre navigateur
-2. **Navigation** :
-   - **Flèches clavier** : ← → ou ↑ ↓ pour naviguer entre les slides
-   - **Boutons** : Utilisez les boutons "Précédent" et "Suivant" en bas à droite
-   - **Scroll** : Défilez pour voir toutes les slides
 
 ## 📊 Contenu
 
@@ -47,14 +40,6 @@ La présentation couvre :
 - ✅ Responsive pour tablettes et mobiles
 - ✅ Fonctionne hors ligne (toutes les ressources sont intégrées)
 
-## 🔧 Personnalisation
 
-Le fichier HTML est entièrement modifiable :
-- Couleurs : Modifiez les gradients dans le CSS (lignes `background: linear-gradient`)
-- Contenu : Éditez directement le HTML dans chaque section `.slide`
-- Graphiques : Les données du graphique Chart.js sont dans le JavaScript
 
----
-
-**Bon courage pour votre présentation ! 🚀**
 
